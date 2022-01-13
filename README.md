@@ -2,6 +2,10 @@
 
 This project is about my overall experience in IT.
 
+# Deployed site
+
+[My Work Experience](https://my-work-experience-reactified.netlify.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
