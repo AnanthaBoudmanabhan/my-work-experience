@@ -43,20 +43,24 @@ function App() {
     return { years, months, days, hours, minutes, seconds };
   }
 
-  function calculateExperience() {
-    let experienceInMilliSeconds = experience.reduce((acc, item) => {
-      let { startDate, endDate } = item;
-      endDate = endDate || moment();
-      const difference = endDate.diff(startDate);
-      return acc + difference;
-    }, 0);
-    let extractedDuration = formatDuration(experienceInMilliSeconds);
-    return extractedDuration;
-  }
+
 
   useEffect(() => {
+
+    function calculateExperience() {
+      let experienceInMilliSeconds = experience.reduce((acc, item) => {
+        let { startDate, endDate } = item;
+        endDate = endDate || moment();
+        const difference = endDate.diff(startDate);
+        return acc + difference;
+      }, 0);
+      let extractedDuration = formatDuration(experienceInMilliSeconds);
+      return extractedDuration;
+    }
+
     setDuration(calculateExperience());
-  }, []);
+
+  }, [experience]);
 
 
   let { years, months, days } = duration;
